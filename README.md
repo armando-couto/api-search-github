@@ -1,8 +1,10 @@
 # API de Consulta a API do GitHub
 
 
-### Demo
+### API do GitHub
+    https://developer.github.com/v3/search/#search-repositories
 
+### Demo
     https://api-search-github.herokuapp.com/
 
 ### Desafio
