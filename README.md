@@ -1,7 +1,12 @@
 # API de Consulta a API do GitHub
 
 
-### API do GitHub
+### Build Readme
+
+    cd build_readme/
+    ruby md2html.rb ../README.md ../public/index.html
+
+### API do GitHub (https://github.com/kristjanjansen/md2html)
     https://developer.github.com/v3/search/#search-repositories
 
 ### Demo
@@ -47,7 +52,8 @@ O JWT é um meio de transmitir informações seguras.
 | /api/v1/auth | POST | Retorno JSON |
 
 Exemplo com curl:
-```sh
+
+```
 curl -X POST \
   http://localhost:3000/api/v1/auth \
   -H 'Content-Type: application/json' \
@@ -55,7 +61,7 @@ curl -X POST \
 ```
 
 Exemplo de retorno de json:
-```json
+```
 {
     "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE1NjQ2MjUxOTB9.J_XzUETJomQEWiJWRHNJHLYW7HfIPGOIbG5IIOeNdeg",
     "exp": "07-31-2019 23:06",
