@@ -31,3 +31,28 @@
 - bundle install
 - rake db:create db:migrate db:seed
 - rails s
+
+### Autenticação com JWT
+
+O JWT é um meio de transmitir informações seguras.
+
+| URL | MÉTODO | RETORNO |
+| --- | ------ | ------- |
+| /api/v1/auth | POST | Retorno JSON |
+
+Exemplo com curl:
+```sh
+curl -X POST \
+  http://localhost:3000/api/v1/auth \
+  -H 'Content-Type: application/json' \
+  -d '{"email": "armando@empresa.com.br", "password": "123456"}'
+```
+
+Exemplo de retorno de json:
+```json
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE1NjQ2MjUxOTB9.J_XzUETJomQEWiJWRHNJHLYW7HfIPGOIbG5IIOeNdeg",
+    "exp": "07-31-2019 23:06",
+    "name": "Armando Couto"
+}
+```
