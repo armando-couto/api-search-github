@@ -14,6 +14,10 @@ class Search
 
   # https://developer.github.com/v3/repos/#list-all-public-repositories
   def self.repositories oauth_token, next_id
+    if next_id.nil?
+      next_id = 1
+    end
+
     self.pagination HTTParty.get("https://api.github.com/repositories?since=#{next_id}",
                                  {headers: {
                                      "User-Agent" => "Httparty",
