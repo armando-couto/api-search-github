@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_015737) do
+ActiveRecord::Schema.define(version: 2019_08_01_010338) do
 
-  create_table "usuarios", force: :cascade do |t|
-    t.string "nome"
-    t.string "email"
+  create_table "searches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "password_digest"
+    t.string "oauth_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

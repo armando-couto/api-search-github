@@ -11,6 +11,8 @@ gem 'puma', '~> 3.11'
 gem 'jwt'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# https://rubygems.org/gems/httparty
+gem 'httparty', '~> 0.17.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get '*other', to: 'static#index'
-  get '*other', to: redirect('/')
+  get '/', to: 'static#index'
 
   namespace 'api' do
     namespace 'v1' do
       post '/auth', to: 'authentication#auth'
+
+      get '/repositories', to: 'search#repositories'
 
     end
   end

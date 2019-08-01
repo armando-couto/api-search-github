@@ -57,7 +57,7 @@ Exemplo com curl:
 curl -X POST \
   http://localhost:3000/api/v1/auth \
   -H 'Content-Type: application/json' \
-  -d '{"email": "armando@empresa.com.br", "password": "123456"}'
+  -d '{"name": "armando", "password": "123456"}'
 ```
 
 Exemplo de retorno de json:
