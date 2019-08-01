@@ -14,7 +14,7 @@ class Search
                             {headers: {
                                 "User-Agent" => "Httparty",
                                 "Content-Type" => "application/json",
-                                "Authorization" => "token 1bece33c453bd21b7e666617ea99e3c94ccf3ae1"}
+                                "Authorization" => "token b0d0bc7366b3632e3a18f410a7625f8cead8cdf9"}
                             })
     list = []
     response.each do |item|

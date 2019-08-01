@@ -11,6 +11,11 @@
 
 ### Demo
     https://api-search-github.herokuapp.com/
+    
+### Observação
+
+Foi preciso usar a API com o OAUTH-TOKEN.
+Por favor ler: https://developer.github.com/v3/#rate-limiting    
 
 ### Desafio
 

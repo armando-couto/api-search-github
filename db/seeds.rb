@@ -1,3 +1,3 @@
 puts "Populando o banco de dados"
 
-User.create!({name: "armando", password: "123456", oauth_token: "1bece33c453bd21b7e666617ea99e3c94ccf3ae1"})
+User.create!({name: "armando", password: "123456", oauth_token: "b0d0bc7366b3632e3a18f410a7625f8cead8cdf9"})
