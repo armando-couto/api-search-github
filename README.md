@@ -74,3 +74,45 @@ Exemplo de retorno de json:
     "name": "Armando Couto"
 }
 ```
+
+### Listando todos os repositórios
+
+Foi usada essa API:  https://developer.github.com/v3/repos/#list-all-public-repositories.
+Pode começar colocando o next_id como 0. 
+
+| URL | MÉTODO | RETORNO |
+| --- | ------ | ------- |
+| /api/v1/repositories?next_id=<ID> | GET | Retorno JSON |
+
+Exemplo com curl:
+
+```
+curl -X GET \
+  http://localhost:3000/api/v1/repositories?next_id=<ID> \
+  -H 'Authorization: <TOKEN-GERADO-PELO-JWT>'
+```
+
+Exemplo de retorno de json:
+
+```
+{
+    "data": [
+        {
+            "full_name": "anotherjesse/fotomatic",
+            "description": "Flash photo widget prototype - hacked at last SHDH of 2007",
+            "star_count": 10,
+            "amount_of_forks": 3,
+            "author_name": "anotherjesse"
+        },
+        ...
+    ],
+    "pagination": {
+        "next_id": 102
+    }
+}
+```
+
+
+
+
+

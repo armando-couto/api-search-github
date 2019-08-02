@@ -119,6 +119,11 @@ ruby md2html.rb ../README.md ../public/index.html
 <pre><code>https://api-search-github.herokuapp.com/
 </code></pre>
 
+<h3>Observação</h3>
+
+<p>Foi preciso usar a API com o OAUTH-TOKEN.<br>
+Por favor ler: <a href="https://developer.github.com/v3/#rate-limiting">https://developer.github.com/v3/#rate-limiting</a>    </p>
+
 <h3>Desafio</h3>
 
 <ul>
@@ -184,7 +189,7 @@ Ruby 2.5.1
 <pre><code>curl -X POST \
   http://localhost:3000/api/v1/auth \
   -H &#39;Content-Type: application/json&#39; \
-  -d &#39;{&quot;email&quot;: &quot;armando@empresa.com.br&quot;, &quot;password&quot;: &quot;123456&quot;}&#39;
+  -d &#39;{&quot;name&quot;: &quot;armando&quot;, &quot;password&quot;: &quot;123456&quot;}&#39;
 </code></pre>
 
 <p>Exemplo de retorno de json:</p>
@@ -193,6 +198,51 @@ Ruby 2.5.1
     &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvX2lkIjoxLCJleHAiOjE1NjQ2MjUxOTB9.J_XzUETJomQEWiJWRHNJHLYW7HfIPGOIbG5IIOeNdeg&quot;,
     &quot;exp&quot;: &quot;07-31-2019 23:06&quot;,
     &quot;name&quot;: &quot;Armando Couto&quot;
+}
+</code></pre>
+
+<h3>Listando todos os repositórios</h3>
+
+<p>Foi usada essa API:  <a href="https://developer.github.com/v3/repos/#list-all-public-repositories">https://developer.github.com/v3/repos/#list-all-public-repositories</a>.<br>
+Pode começar colocando o next_id como 0. </p>
+
+<table><thead>
+<tr>
+<th>URL</th>
+<th>MÉTODO</th>
+<th>RETORNO</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>/api/v1/repositories?next_id=<ID></td>
+<td>GET</td>
+<td>Retorno JSON</td>
+</tr>
+</tbody></table>
+
+<p>Exemplo com curl:</p>
+
+<pre><code>curl -X GET \
+  http://localhost:3000/api/v1/repositories?next_id=&lt;ID&gt; \
+  -H &#39;Authorization: &lt;TOKEN-GERADO-PELO-JWT&gt;&#39;
+</code></pre>
+
+<p>Exemplo de retorno de json:</p>
+
+<pre><code>{
+    &quot;data&quot;: [
+        {
+            &quot;full_name&quot;: &quot;anotherjesse/fotomatic&quot;,
+            &quot;description&quot;: &quot;Flash photo widget prototype - hacked at last SHDH of 2007&quot;,
+            &quot;star_count&quot;: 10,
+            &quot;amount_of_forks&quot;: 3,
+            &quot;author_name&quot;: &quot;anotherjesse&quot;
+        },
+        ...
+    ],
+    &quot;pagination&quot;: {
+        &quot;next_id&quot;: 102
+    }
 }
 </code></pre>
 
