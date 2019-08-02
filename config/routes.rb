@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       post '/auth', to: 'authentication#auth'
 
       get '/repositories', to: 'search#repositories'
+      get '/search_repositories', to: 'search#search_repositories'
 
     end
   end

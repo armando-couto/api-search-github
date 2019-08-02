@@ -115,4 +115,11 @@ Exemplo de retorno de json:
 
 
 
+### Gems
 
+* [httparty](https://rubygems.org/gems/httparty)
+* [BCrypt](https://github.com/codahale/bcrypt-ruby)
+* [Faker](https://github.com/stympy/faker)
+* [Jwt](https://github.com/jwt/ruby-jwt)
+* [Postgres](https://bitbucket.org/ged/ruby-pg/wiki/Home)
+* [Rails](https://github.com/rails/rails)
