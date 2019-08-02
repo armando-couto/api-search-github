@@ -11,8 +11,8 @@ module Api::V1
 
     # GET /
     def repositories
-      data = Search.repositories(@current_user.oauth_token, params["next_id"])
-      render json: {data: data, pagination: {"next_id": data[data.length - 1].id}}, status: :ok
+      data, next_id = Search.repositories(@current_user.oauth_token, params["next_id"])
+      render json: {data: data, pagination: {next_id: next_id}}, status: :ok
     end
   end
 end
