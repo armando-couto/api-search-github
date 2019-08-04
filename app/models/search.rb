@@ -30,9 +30,17 @@ class Search
       language = "ruby"
     end
 
-    # https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc
+    sort = params["sort"]
+    if sort.nil? || sort == ""
+      sort = "created"
+    end
 
-    self.pagination_struct_items HTTParty.get("https://api.github.com/search/repositories?q=#{params["q"]}+language:#{language};page=#{params["page"]}",
+    order = params["order"]
+    if order.nil? || order == ""
+      order = "asc"
+    end
+
+    self.pagination_struct_items HTTParty.get("https://api.github.com/search/repositories?q=#{params["query"]}+language:#{language};page=#{params["page"]}&sort=#{sort}&order=#{order}",
                                               {headers: {
                                                   "User-Agent" => "Httparty",
                                                   "Content-Type" => "application/json",

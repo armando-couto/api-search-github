@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
       get '/repositories', to: 'search#repositories'
       get '/search_repositories', to: 'search#search_repositories'
-
     end
   end
 end

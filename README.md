@@ -112,8 +112,42 @@ Exemplo de retorno de json:
 }
 ```
 
+OBS: SORT por ser 'created', 'updated' e 'stars'.
 
+| URL | MÉTODO | RETORNO |
+| --- | ------ | ------- |
+| /api/v1/search_repositories?query=<QUERY>&page=<PAGE_NUMBER>&lnaguage=<LANGUAGE>&sort=<SORT>&order=<ASC OU DESC> | GET | Retorno JSON |
 
+Exemplo com curl:
+
+```
+curl -X GET \
+  http://localhost:3000/api/v1/search_repositories?query=<QUERY>&page=<PAGE_NUMBER>&lnaguage=<LANGUAGE>&sort=<SORT>&order=<ASC OU DESC> \
+  -H 'Authorization: <TOKEN-GERADO-PELO-JWT>'
+```
+
+Exemplo de retorno de json:
+
+```
+{
+    "data": [
+        {
+            "full_name": "facebook/taste-tester",
+            "description": "Software to manage a chef-zero instance and use it to test changes on production servers.",
+            "star_count": 112,
+            "amount_of_forks": 56,
+            "author_name": "facebook"
+        },
+        ...
+    ],
+    "pagination": {
+        "next_page": 2,
+        "prev_page": 0,
+        "last_page": 34,
+        "first_page": 0
+    }
+}
+```
 
 ### Gems
 
