@@ -109,12 +109,12 @@ GEM
       timeout
     net-smtp (0.3.3)
       net-protocol
-    nio4r (2.5.8)
+    nio4r (2.5.9)
     nokogiri (1.14.3)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     pg (1.4.6)
-    puma (6.1.1)
+    puma (6.3.1)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
@@ -177,7 +177,7 @@ DEPENDENCIES
   jwt
   listen (>= 3.0.5, < 3.8.1)
   pg (>= 0.18, < 2.0)
-  puma (~> 6.0)
+  puma (~> 6.3)
   rails (~> 7.0.0)
   spring
   spring-watcher-listen (~> 2.1.0)
