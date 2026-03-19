@@ -10,7 +10,7 @@ gem 'puma', '~> 6.4'
 # Use Json Web Token (JWT) for token based authentication
 gem 'jwt'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.22'
 # https://rubygems.org/gems/httparty
 gem 'httparty', '~> 0.21.0'
 
